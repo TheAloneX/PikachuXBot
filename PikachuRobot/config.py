@@ -19,20 +19,20 @@ class Config(object):
     API_HASH = "awoo"
     TOKEN = "BOT_TOKEN"  #This var used to be API_KEY but it is now TOKEN, adjust accordingly.
     OWNER_ID = 792109647  # If you dont know, run the bot and do /id in your private chat with it, also an integer
-    OWNER_USERNAME = "Sawada"
+    OWNER_USERNAME = "TheAloneX"
     SUPPORT_CHAT = 'OnePunchSupport'  #Your own group for support, do not add the @
     JOIN_LOGGER = -1001253661229  #Prints any new group the bot is added to, prints just the name and ID.
     EVENT_LOGS = -1001190806654  #Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
 
     #RECOMMENDED
     SQLALCHEMY_DATABASE_URI = 'something://somewhat:user@hosturl:port/databasename'  # needed for any database modules
-    REDIS_URI = " "
+    REDIS_URI = "redis-19313.c275.us-east-1-4.ec2.cloud.redislabs.com:19313"
     LOAD = []
     NO_LOAD = ['rss', 'cleaner', 'connection', 'math']
     WEBHOOK = False
     INFOPIC = True
     URL = None
-    SPAMWATCH_API = ""  # go to support.spamwat.ch to get key
+    SPAMWATCH_API = "fIXLV8R4OQeAqy8mdVmLU34WT8gZHde4iTuOhh4QLXpjZYxVyU4C~jq40inaykJk"  # go to support.spamwat.ch to get key
     SPAMWATCH_SUPPORT_CHAT = "@SpamWatchSupport"
 
     #OPTIONAL
