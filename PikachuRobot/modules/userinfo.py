@@ -224,9 +224,9 @@ def info(update: Update, context: CallbackContext):
         return
 
     rep = message.reply_text(
-        "<code>Appraising...</code>", parse_mode=ParseMode.HTML)
+        "<code>Connecting To Pikachu...</code>", parse_mode=ParseMode.HTML)
 
-    text = (f"╒═══「<b> Appraisal results:</b> 」\n"
+    text = (f"╒═══「<b> Pikachu DB Userinfo :</b> 」\n"
             f"ID: <code>{user.id}</code>\n"
             f"First Name: {html.escape(user.first_name)}")
 
@@ -292,7 +292,7 @@ def info(update: Update, context: CallbackContext):
 
     if disaster_level_present:
 
-        text += ' [<a href="https://t.me/SuzuyaUpdates/55">?</a>]'.format(
+        text += ' [<a href="https://t.me/PikachuXUpdates/6">?</a>]'.format(
             bot.username)
 
     try:
