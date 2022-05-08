@@ -30,38 +30,46 @@ from PikachuRobot.modules.helper_funcs.alternate import typing_action
 
 
 PM_START_TEXT = """
-Hello there,The name's [Pikachu](https://telegra.ph/file/871a5d71464c77ed5d145.jpg)
-
-I am an 𝐴𝑛𝑖𝑚𝑒 Themed Group Managing Bot and I will help in managing your group
-
-✪ Make sure you read *INFO* Section Below.✪ 
+───────「 Pikachu 」───────
+I am Pikachu, I Am Pokémon Themed Advanced Group Management Bot With Lots Of Awesome Features.
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+⚡ Owner : @TheAloneXD [.](https://telegra.ph/file/e92a196d339366673eda2.jpg)
+⚡ Try The Help Buttons Below To Know My Abilities
+➖➖➖➖➖➖➖➖➖➖➖➖➖
 """
 
 buttons = [
     [        
         InlineKeyboardButton(
-        text="INFO", callback_data="aboutmanu_"
+        text="🗃 About", callback_data="aboutpikachu_"
         ),
+    ],
+    [
+         InlineKeyboardButton(
+         text="🔐 Help", callback_data="help_back"),
+    ],
+    [
+        InlineKeyboardButton(
+            text="⚙️ Support", url="https://t.me/PikachuXSupport"),
+
+        InlineKeyboardButton(
+            text="🔔 Updates",url="https://t.me/PikachuXUpdates"),
     ],
     [        
         InlineKeyboardButton(
-        text="💫 Add Pikachu to your group 💫", url="t.me/suzuya_probot?startgroup=true"
+        text="➕ Add Pikachu To Your Group", url="t.me/PikachuXRoBot?startgroup=true"
         ),
     ]
 ]
 
 
 HELP_STRINGS = f"""
-*Main Commands :* [ʕ·ᴥ·ʔ](https://telegra.ph/file/5534384d2f2b2d8e6fdbb.jpg)
-✪ /start: Starts me! You've probably already used this.
-✪ /help: Click this, I'll let you know about myself!
-✪ /donate: You can support my creater using this command.
-✪ /settings: 
-   ◔ in PM: will send you your settings for all supported modules.
-   ◔ in a Group: will redirect you to pm, with all that chat's settings.
+💛 Pikachu comes with Super Natural Powers. 
+💜 Check Below Buttons For Particular Command.
+🧡 Reach out for support :  @PikachuXSupport [.](https://telegra.ph/file/e92a196d339366673eda2.jpg)
 """.format(
     dispatcher.bot.first_name, ""
-    if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
+    if not ALLOW_EXCL else "\n♥️ All commands can either be used with / or !.\n")
 
 
 
@@ -321,31 +329,33 @@ def help_button(update, context):
 @run_async
 def SaitamaRobot_about_callback(update, context):
     query = update.callback_query
-    if query.data == "aboutmanu_":
+    if query.data == "aboutpikachu_":
         query.message.edit_text(
-            text=f"*Hi again! The name's {dispatcher.bot.first_name}. \n\nAs  You I'm An Anime Themed Group Management Bot.* "
-                 f"\n\n Join [Updates Channel](https://t.me/pikachubotupdates) To Keep Yourself Updated About {dispatcher.bot.first_name}."
+            text=f"*Hi again! I am Pikachu Here. \n\nI'm An Anime Themed Group Management Bot.* "
+                 f"\n\n Join [Updates Channel](https://t.me/pikachuxupdates) To Keep Yourself Updated About {dispatcher.bot.first_name}."
                  f"\n\n I have the normal GROUP MANAGING functions like flood control, a warning system etc but I mainly have the advanced and handy Antispam system and the SIBYL banning system which safegaurds and helps your group from spammers."
-                 f"\n\nI Can Manage Your Groups Smoothly, With Some Special Features. [◖⚆ᴥ⚆◗](https://telegra.ph/file/871a5d71464c77ed5d145.jpg)."
+                 f"\n\nI Can Manage Your Groups Smoothly, With Some Special Features. [◖⚆ᴥ⚆◗](https://telegra.ph/file/e92a196d339366673eda2.jpg)."
                  f"\n\nYou Can Know More About Me By Clicking The Below Buttons.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                    InlineKeyboardButton(text="How To Use Me", callback_data="aboutmanu_howto"),
-                    InlineKeyboardButton(text="T & C", callback_data="aboutmanu_tac")
+                    InlineKeyboardButton(text="❓ How To Use Me", callback_data="aboutpikachu_howto"),
+                    InlineKeyboardButton(text="🔨 Credits", callback_data="aboutpikachu_credit")
                   ],
-                 [
-                    InlineKeyboardButton(text="Back", callback_data="aboutmanu_back")
-                 ],
-                 [
-                    InlineKeyboardButton(text="Help", callback_data="help_back")
-                 ] 
+                  [
+                    InlineKeyboardButton(text="🔐 Help", callback_data="help_back"),
+                    InlineKeyboardButton(text="⚙️ Support", url="https://t.me/PikachuXSupport"),
+
+                  ],
+                  [
+                    InlineKeyboardButton(text="Back", callback_data="aboutpikachu_back")
+                  ]
                 ]
             ),
         )
-    elif query.data == "aboutmanu_back":
+    elif query.data == "aboutpikachu_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -353,32 +363,32 @@ def SaitamaRobot_about_callback(update, context):
                 timeout=60, 
             )
         
-    elif query.data == "aboutmanu_howto":
+    elif query.data == "aboutpikachu_howto":
         query.message.edit_text(
             text=f"*╠╾ ｢ BASIC HELP 」╼╣*"
                  f"\nIf You Can Also Add {dispatcher.bot.first_name} To Your Chats By Clicking [Here](http://t.me/{dispatcher.bot.username}?startgroup=true) And Selecting Chat. \n"
-                 f"\n\nYou Can Know Main commands of {dispatcher.bot.first_name} by Just Clicking [Here](https://telegra.ph/SUZUYA-GM-BOT-12-16).\n"
+                 f"\n\nYou Can Know Main commands of {dispatcher.bot.first_name} by Just Clicking [Here](https://t.me/PikachuXUpdates/5).\n"
                  f"",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton(text="Admins Settings", callback_data="aboutmanu_permis"),
-                InlineKeyboardButton(text="Anti Spam", callback_data="aboutmanu_spamprot")],
+                InlineKeyboardButton(text="Admins Settings", callback_data="aboutpikachu_permis"),
+                InlineKeyboardButton(text="Anti Spam", callback_data="aboutpikachu_spamprot")],
                 [
-                InlineKeyboardButton(text="Back", callback_data="aboutmanu_")]
+                InlineKeyboardButton(text="Back", callback_data="aboutpikachu_")]
                                                ]),
         )
-    elif query.data == "aboutmanu_credit":
+    elif query.data == "aboutpikachu_credit":
         query.message.edit_text(
-            text=f"*{dispatcher.bot.first_name} Is A Powerful Bot For Managing Groups With Additional Features.*"
-                 f"\n\nhelp (credits) Of [Shoko](https://github.com/gizmostuffin/Shoko) + [Saitama](https://github.com/AnimeKaizoku/SaitamaRobot)."
+            text=f"*{dispatcher.bot.first_name} Is An Advanced group Management Bot With Awesome Features.*"
+                 f"\n\nBase (credits) Of [Saitama](https://github.com/AnimeKaizoku/SaitamaRobot)"
                  f"\n\n{dispatcher.bot.first_name}'s Licensed Under The GNU _(General Public License v3.0)_"
-                 f"\n\nIf Any Question About {dispatcher.bot.first_name}, \nLet Us Know At @{SUPPORT_CHAT}.",
+                 f"\n\nIf Any Question About {dispatcher.bot.first_name}, \nLet Us Know At @PikachuXSupport.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Back", callback_data="aboutmanu_tac")]]),
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Back", callback_data="aboutpikachu_tac")]]),
         )
-    elif query.data == "aboutmanu_permis":
+    elif query.data == "aboutpikachu_permis":
         query.message.edit_text(
             text=f"<b>╠╾ ｢ Admin Permissions 」╼╣</b>"
                  f"\nTo avoid slowing down, {dispatcher.bot.first_name} caches admin rights for each user. This cache lasts about 10 minutes; this may change in the future. This means that if you promote a user manually (without using the /promote command), {dispatcher.bot.first_name} will only find out ~10 minutes later."
@@ -388,9 +398,9 @@ def SaitamaRobot_about_callback(update, context):
                  f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
                  f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
             parse_mode=ParseMode.HTML,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Back", callback_data="aboutmanu_howto")]]),
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Back", callback_data="aboutpikachu_howto")]]),
         )
-    elif query.data == "aboutmanu_spamprot":
+    elif query.data == "aboutpikachu_spamprot":
         query.message.edit_text(
             text="*╠╾ ｢ Anti-Spam Settings 」╼╣*"
                  "\n- /antispam <on/off/yes/no>: Change antispam security settings in the group, or return your current settings(when no arguments)."
@@ -415,9 +425,9 @@ def SaitamaRobot_about_callback(update, context):
                  "\n\n- /welcomemute <off/soft/strong>: All users that join, get muted"
                  "\n_ A button gets added to the welcome message for them to unmute themselves. This proves they aren't a bot! soft - restricts users ability to post media for 24 hours. strong - mutes on join until they prove they're not bots._",
             parse_mode=ParseMode.MARKDOWN,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Back", callback_data="aboutmanu_howto")]]),
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Back", callback_data="aboutpikachu_howto")]]),
         )
-    elif query.data == "aboutmanu_tac":
+    elif query.data == "aboutpikachu_tac":
         query.message.edit_text(
             text=f"<b>╠╾ ｢ Terms and Conditions 」╼╣</b>\n"
                  f"\n<i>To Use This Bot, You Need To Read Terms and Conditions Carefully.</i>\n"
@@ -434,8 +444,8 @@ def SaitamaRobot_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                    InlineKeyboardButton(text="Credits", callback_data="aboutmanu_credit"),
-                    InlineKeyboardButton(text="Back", callback_data="aboutmanu_")
+                    InlineKeyboardButton(text="🔨 Credits", callback_data="aboutpikachu_credit"),
+                    InlineKeyboardButton(text="Back", callback_data="aboutpikachu_")
                   ]])
         )
         
@@ -460,7 +470,7 @@ def get_help(update, context):
                     ],
                     [
                         InlineKeyboardButton(
-                            text="Support Chat",
+                            text="⚙️ Support",
                             url="https://t.me/{}".format(SUPPORT_CHAT),
                         )
                     ]
@@ -691,7 +701,7 @@ def donate(update: Update, context: CallbackContext):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True)
 
-        if OWNER_ID != 254318997 and DONATION_LINK:
+        if OWNER_ID != 5259108841 and DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
                 "[here]({})".format(DONATION_LINK),
@@ -770,7 +780,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "I am now online!")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Yes I am Back to Online [💛](https://telegra.ph/file/e92a196d339366673eda2.jpg)")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!")
@@ -788,7 +798,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    about_callback_handler = CallbackQueryHandler(SaitamaRobot_about_callback, pattern=r"aboutmanu_")
+    about_callback_handler = CallbackQueryHandler(SaitamaRobot_about_callback, pattern=r"aboutpikachu_")
     
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
     is_chat_allowed_handler = MessageHandler(Filters.group, is_chat_allowed)
