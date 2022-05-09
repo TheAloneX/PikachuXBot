@@ -26,7 +26,7 @@ class Config(object):
 
     #RECOMMENDED
     SQLALCHEMY_DATABASE_URI = 'something://somewhat:user@hosturl:port/databasename'  # needed for any database modules
-    REDIS_URI = "redis://redis-15644.c265.us-east-1-2.ec2.cloud.redislabs.com:15644"
+    REDIS_URI = "redis://MassRock@NnqmXfF4llgzdtDQSfIiexsk3xTrmzVG:redis-15644.c265.us-east-1-2.ec2.cloud.redislabs.com:15644/MassRock"
     LOAD = []
     NO_LOAD = ['rss', 'cleaner', 'connection', 'math']
     WEBHOOK = False
